@@ -1,6 +1,7 @@
 # SLF4J-Color
 
-![Release](https://img.shields.io/badge/release-v0.1.0--SNAPSHOT-red)
+[![JitPack.io](https://jitpack.io/v/XiamLiTechnologies/SLF4J-Color.svg)](https://jitpack.io/#XiamLiTechnologies/SLF4J-Color)
+![Release](https://img.shields.io/badge/release-0.1.0-brightgreen)
 ![License](https://img.shields.io/badge/license-MIT-blue)
 ![Maintenance](https://img.shields.io/maintenance/yes/2020.svg)
 
@@ -16,7 +17,26 @@ Therefore, this project is **NOT** for production but only used in development a
 
 It's made for use with Java 11 or later.
 
-Currently we don't offer a public build server, therefore you need to build it yourself using maven.
+If you don't wanna build it yourself, you can use JitPack.io:
+
+Add the JitPack repository to your build file:
+```xml
+<repositories>
+    <repository>
+        <id>jitpack.io</id>
+        <url>https://jitpack.io</url>
+    </repository>
+</repositories>
+```
+ 
+Add the dependency
+```xml
+<dependency>
+    <groupId>com.github.XiamLiTechnologies</groupId>
+    <artifactId>SLF4J-Color</artifactId>
+    <version>0.1.0</version>
+</dependency>
+```
 
 ## Installation
 
