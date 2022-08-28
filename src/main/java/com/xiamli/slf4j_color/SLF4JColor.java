@@ -21,7 +21,7 @@ public class SLF4JColor {
         setDefaultLogLevel(LogLevel.DEBUG);
     }
 
-    public static void disableLogger(Class aClass) {
+    public static void disableLogger(Class<?> aClass) {
         setLogLevel(aClass, LogLevel.OFF);
     }
 
@@ -29,7 +29,7 @@ public class SLF4JColor {
         setLogLevel(name, LogLevel.OFF);
     }
 
-    public static void setLogLevel(Class aClass, LogLevel logLevel) {
+    public static void setLogLevel(Class<?> aClass, LogLevel logLevel) {
         setLogLevel(aClass.getCanonicalName(), logLevel);
     }
 

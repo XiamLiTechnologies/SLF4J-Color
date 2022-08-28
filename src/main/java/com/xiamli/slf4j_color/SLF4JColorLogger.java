@@ -42,7 +42,7 @@ public final class SLF4JColorLogger extends AbstractEnumLogger {
         if (throwable != null) {
             val byteArrayOutputStream = new ByteArrayOutputStream();
             throwable.printStackTrace(new PrintStream(byteArrayOutputStream));
-            stringBuilder.append(System.getProperty("line.separator")).append(new String(byteArrayOutputStream.toByteArray()));
+            stringBuilder.append(System.getProperty("line.separator")).append(byteArrayOutputStream);
         }
 
         PrintStream targetStream = logLevel.compare(LogLevel.WARN) ? System.err : System.out;

@@ -5,7 +5,7 @@
 
     <groupId>com.xiamli</groupId>
     <artifactId>slf4j-color</artifactId>
-    <version>0.1.0-SNAPSHOT</version>
+    <version>0.2.0</version>
     <packaging>jar</packaging>
 
     <name>SLF4J-Color</name>
@@ -20,17 +20,35 @@
     </developers>
 
     <properties>
-        <maven.compiler.source>11</maven.compiler.source>
-        <maven.compiler.target>11</maven.compiler.target>
-        <maven.shade-plugin.version>3.2.4</maven.shade-plugin.version>
-        <maven.compiler-plugin.version>3.8.1</maven.compiler-plugin.version>
-        <maven.jar-plugin.version>3.2.0</maven.jar-plugin.version>
+        <maven.compiler.source>17</maven.compiler.source>
+        <maven.compiler.target>17</maven.compiler.target>
+        <maven.shade-plugin.version>3.3.0</maven.shade-plugin.version>
+        <maven.compiler-plugin.version>3.10.1</maven.compiler-plugin.version>
+        <maven.jar-plugin.version>3.2.2</maven.jar-plugin.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 
-        <lombok.version>1.18.12</lombok.version>
-        <slf4j.version>2.0.0-alpha1</slf4j.version>
-        <jansi.version>1.18</jansi.version>
+        <lombok.version>1.18.24</lombok.version>
+        <slf4j.version>2.0.0</slf4j.version>
+        <jansi.version>2.4.0</jansi.version>
     </properties>
+
+    <distributionManagement>
+        <repository>
+            <id>xiamli-releases</id>
+            <url>https://repo.xiam.li/repository/maven-releases/</url>
+        </repository>
+        <snapshotRepository>
+            <id>xiamli-snapshots</id>
+            <url>https://repo.xiam.li/repository/maven-snapshots/</url>
+        </snapshotRepository>
+    </distributionManagement>
+
+    <repositories>
+        <repository>
+            <id>xiamli-nexus</id>
+            <url>https://repo.xiam.li/repository/maven/</url>
+        </repository>
+    </repositories>
 
     <dependencies>
         <dependency>
@@ -101,6 +119,27 @@
                 <artifactId>maven-jar-plugin</artifactId>
                 <version>${maven.jar-plugin.version}</version>
             </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-deploy-plugin</artifactId>
+                <version>2.8.2</version>
+            </plugin>
         </plugins>
     </build>
+
+    <profiles>
+        <profile>
+            <id>gitea</id>
+            <distributionManagement>
+                <repository>
+                    <id>gitea</id>
+                    <url>https://gitea.xiam.li/api/packages/XiamLi/maven</url>
+                </repository>
+                <snapshotRepository>
+                    <id>gitea</id>
+                    <url>https://gitea.xiam.li/api/packages/XiamLi/maven</url>
+                </snapshotRepository>
+            </distributionManagement>
+        </profile>
+    </profiles>
 </project>

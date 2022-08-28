@@ -5,21 +5,24 @@
 ![License](https://img.shields.io/badge/license-MIT-blue)
 ![Maintenance](https://img.shields.io/maintenance/yes/2020.svg)
 
-Simple Logging Implementation for SLF4J, similar to SLF4J-Simple, but with ANSI colors supported. 
+Simple Logging Implementation for SLF4J, similar to SLF4J-Simple, but with ANSI colors supported.
 
-As this is just made for rapid development, you don't need to configure anything. The default log level is DEBUG (which can be changed using ```SLF4JColor.setDefaultLogLevel```).
+As this is just made for rapid prototyping, you don't need to configure anything. The default log level is DEBUG (which
+can be changed using ```SLF4JColor.setDefaultLogLevel```).
 
-The shaded JAR also includes slf4j - meaning you don't need to import/shade it explicitly.
+The shaded JAR is built with the SLF4J API, therefore you don't need to explicitly import it.
 
-Therefore, this project is **NOT** for production but only used in development and then later replaced with e.g. a implementation that supports logging to files.
+Because of all of this, this project is **not** intended for production use, but rather in local prototyping and
+development.
 
 ## Requirements
 
-It's made for use with Java 11 or later.
+It's built against Java 17.
 
-If you don't wanna build it yourself, you can use JitPack.io:
+If you don't want to build it yourself, you can use JitPack.io;
 
 Add the JitPack repository to your build file:
+
 ```xml
 <repositories>
     <repository>
@@ -28,13 +31,14 @@ Add the JitPack repository to your build file:
     </repository>
 </repositories>
 ```
- 
+
 Add the dependency
+
 ```xml
 <dependency>
     <groupId>com.github.XiamLiTechnologies</groupId>
     <artifactId>SLF4J-Color</artifactId>
-    <version>0.1.0</version>
+    <version>0.2.0</version>
 </dependency>
 ```
 
@@ -45,7 +49,7 @@ Build it using maven:
 ```bash
 mvn clean install
 ```
- 
+
 ### Maven users
 
 Add this dependency to your project's POM:
@@ -54,7 +58,7 @@ Add this dependency to your project's POM:
 <dependency>
   <groupId>com.xiamli</groupId>
   <artifactId>slf4j-color</artifactId>
-  <version>0.1.0-SNAPSHOT</version>
+  <version>0.2.0-SNAPSHOT</version>
 </dependency>
 ```
 
@@ -63,7 +67,7 @@ Add this dependency to your project's POM:
 Add this dependency to your project's build file:
 
 ```groovy
-compile "com.xiamli:slf4j-color:0.1.0-SNAPSHOT"
+compile "com.xiamli:slf4j-color:0.2.0-SNAPSHOT"
 ```
 
 ## Usage

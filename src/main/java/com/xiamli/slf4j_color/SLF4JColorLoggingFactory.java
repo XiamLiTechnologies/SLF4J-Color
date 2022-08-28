@@ -8,7 +8,7 @@ import java.util.concurrent.ConcurrentHashMap;
 
 public class SLF4JColorLoggingFactory implements ILoggerFactory {
 
-    private Map<String, Logger> cachedLoggers = new ConcurrentHashMap<>();
+    private final Map<String, Logger> cachedLoggers = new ConcurrentHashMap<>();
 
     @Override
     public Logger getLogger(String name) {

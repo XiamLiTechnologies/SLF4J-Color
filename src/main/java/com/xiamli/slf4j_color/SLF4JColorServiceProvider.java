@@ -11,10 +11,15 @@ import org.slf4j.spi.SLF4JServiceProvider;
 @Getter
 public class SLF4JColorServiceProvider implements SLF4JServiceProvider {
 
-    private final String requesteApiVersion = "1.8.99";
+    private final String REQUESTED_API_VERSION = "2.0.99";
     private ILoggerFactory loggerFactory;
     private IMarkerFactory markerFactory;
     private MDCAdapter MDCAdapter;
+
+    @Override
+    public String getRequestedApiVersion() {
+        return REQUESTED_API_VERSION;
+    }
 
     @Override
     public void initialize() {

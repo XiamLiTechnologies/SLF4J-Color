@@ -29,9 +29,9 @@ public enum LogLevel {
                 slf4jMap.put(value.getEventLevel(), value);
     }
 
-    private int level;
-    private Level eventLevel;
-    private Ansi.Color color;
+    private final int level;
+    private final Level eventLevel;
+    private final Ansi.Color color;
 
     public static LogLevel get(Level level) {
         return slf4jMap.get(level);
