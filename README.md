@@ -1,9 +1,8 @@
 # SLF4J-Color
 
 [![JitPack.io](https://jitpack.io/v/XiamLiTechnologies/SLF4J-Color.svg)](https://jitpack.io/#XiamLiTechnologies/SLF4J-Color)
-![Release](https://img.shields.io/badge/release-0.1.0-brightgreen)
+![Release](https://img.shields.io/badge/release-0.2.0-brightgreen)
 ![License](https://img.shields.io/badge/license-MIT-blue)
-![Maintenance](https://img.shields.io/maintenance/yes/2020.svg)
 
 Simple Logging Implementation for SLF4J, similar to SLF4J-Simple, but with ANSI colors supported.
 
